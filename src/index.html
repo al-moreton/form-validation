@@ -4,32 +4,82 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Form validation</title>
+    <script src="https://kit.fontawesome.com/caa061f740.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="p-4">
 <header>
-    <h1>
-        Form validation
-    </h1>
 </header>
-<main>
-    <form>
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" required>
-        <label for="country">Country</label>
-        <select id="country" name="country" required>
-            <option value="">Select a country</option>
-            <option value="united-kingdom">United Kingdom</option>
-            <option value="usa">USA</option>
-        </select>
-        <label for="postcode">Postcode</label>
-        <input type="text" id="postcode" name="postcode" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-        <button type="submit">Submit</button>
+<main class="mx-auto max-w-2xl mt-9">
+    <form class="grid grid-cols-1 sm:grid-cols-6 p-4 gap-8" novalidate return false>
+        <div class="col-span-1 sm:col-span-6 flex flex-col">
+            <h1 class="text-lg font-semibold">
+                Form validation
+            </h1>
+            <p class="mt-1 text-sm text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+            </p>
+        </div>
+        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
+            <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
+            <input type="email" id="email" name="email"
+                   class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+            <span class="email-error text-sm text-red-500 absolute -bottom-[25px]"></span>
+        </div>
+        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
+            <label for="country" class="block text-sm font-medium text-gray-900">Country</label>
+            <select id="country" name="country"
+                    class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <option value="">Select a country</option>
+                <option value="united-kingdom">United Kingdom</option>
+                <option value="usa">USA</option>
+            </select>
+            <span class="country-error text-sm text-red-500 absolute -bottom-[25px]"></span>
+        </div>
+        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
+            <label for="postcode" class="block text-sm font-medium text-gray-900">Postcode</label>
+            <input type="text" id="postcode" name="postcode"
+                   class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+            <span class="postcode-error text-sm text-red-500 absolute -bottom-[25px]"></span>
+        </div>
+        <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+            <div class="col-span-1 sm:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
+                    <input type="password" id="password" name="password"
+                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                </div>
+                <div>
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-900">Confirm
+                        Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password"
+                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                </div>
+            </div>
+            <span class="password-error text-sm text-red-500 absolute -bottom-[25px]"></span>
+        </div>
+        <div class="col-span-1 sm:col-span-6 flex flex-col -mt-[25px]">
+            <div class="password-checklist-box border-1 border-red-500 p-2 rounded-md">
+                <span class="text-sm">
+                    Password requirements:
+                </span>
+                <ul class="fa-ul text-xs my-2 password-checklist">
+                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Minimum of 8 characters</li>
+                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Must contain an uppercase letter</li>
+                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Contain a number or symbol</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-span-1 sm:col-span-6 flex items-center gap-8">
+            <!--            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>-->
+            <button type="submit"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Submit
+            </button>
+        </div>
     </form>
+    <div class="mt-9 border-t border-gray-200 message whitespace-pre-line">
+    </div>
 </main>
 <footer></footer>
 </body>
