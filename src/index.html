@@ -7,80 +7,98 @@
     <script src="https://kit.fontawesome.com/caa061f740.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="p-4">
+<body class="p-4 bg-gradient-to-br from-blue-600 to-teal-100">
 <header>
 </header>
-<main class="mx-auto max-w-2xl mt-9">
-    <form class="grid grid-cols-1 sm:grid-cols-6 p-4 gap-8" novalidate return false>
-        <div class="col-span-1 sm:col-span-6 flex flex-col">
-            <h1 class="text-lg font-semibold">
-                Form validation
-            </h1>
-            <p class="mt-1 text-sm text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
-            </p>
-        </div>
-        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
-            <label for="email" class="block text-sm font-medium text-gray-900">Email address</label>
-            <input type="email" id="email" name="email"
-                   class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-            <span class="email-error text-sm text-red-500 absolute -bottom-[25px]"></span>
-        </div>
-        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
-            <label for="country" class="block text-sm font-medium text-gray-900">Country</label>
-            <select id="country" name="country"
-                    class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                <option value="">Select a country</option>
-                <option value="united-kingdom">United Kingdom</option>
-                <option value="usa">USA</option>
-            </select>
-            <span class="country-error text-sm text-red-500 absolute -bottom-[25px]"></span>
-        </div>
-        <div class="col-span-1 sm:col-span-5 flex flex-col relative">
-            <label for="postcode" class="block text-sm font-medium text-gray-900">Postcode</label>
-            <input type="text" id="postcode" name="postcode"
-                   class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-            <span class="postcode-error text-sm text-red-500 absolute -bottom-[25px]"></span>
-        </div>
-        <div class="col-span-1 sm:col-span-6 flex flex-col relative">
-            <div class="col-span-1 sm:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                    <label for="password" class="block text-sm font-medium text-gray-900">Password</label>
-                    <input type="password" id="password" name="password"
-                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+<main>
+    <div class="max-w-[500px] p-4 m-auto rounded-2xl shadow-xl bg-white border-1 border-slate-100 mt-7">
+        <form class="grid grid-cols-1 sm:grid-cols-6 p-4 gap-8" novalidate return false>
+            <div class="flex flex-col gap-3 items-center col-span-1 sm:col-span-6 flex flex-col mt-6 text-center px-7">
+                <i class="fa-solid fa-key fa-xl mb-5 text-slate-500"></i>
+                <h1 class="text-3xl font-semibold">
+                    Form validation
+                </h1>
+                <p class="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                </p>
+            </div>
+            <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+                <label for="email" class="block text-sm font-medium text-gray-500">Email address*</label>
+                <input required type="email" id="email" name="email"
+                       class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <span class="email-error text-xs text-red-500 absolute -bottom-[25px]"></span>
+            </div>
+
+            <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+                <label for="country" class="block text-sm font-medium text-gray-500">Country*</label>
+                <select required id="country" name="country"
+                        class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                    <option value="">Select a country</option>
+                    <option value="united-kingdom">United Kingdom</option>
+                    <option value="usa">USA</option>
+                </select>
+                <span class="country-error text-xs text-red-500 absolute -bottom-[25px]"></span>
+            </div>
+
+            <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+                <label for="postcode" class="block text-sm font-medium text-gray-500">Postcode*</label>
+                <input required type="text" id="postcode" name="postcode"
+                       class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <span class="postcode-error text-xs text-red-500 absolute -bottom-[25px]"></span>
+            </div>
+            <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+                <label for="password" class="block text-sm font-medium text-gray-500">Password*</label>
+                <div class="flex flex-row gap-2 justify-between px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                    <input required type="password" id="password" name="password" minlength="8"
+                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 w-full focus:outline-0">
+                    <i class="password-reveal fa-regular fa-eye"></i>
                 </div>
-                <div>
-                    <label for="confirm-password" class="block text-sm font-medium text-gray-900">Confirm
-                        Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password"
-                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <span class="password-error text-xs text-red-500 absolute -bottom-[25px]"></span>
+                <div class="flex flex-col gap-2 password-checklist-box border-1 border-slate-200 rounded-md hidden">
+                    <span class="text-sm">
+                        Password requirements:
+                    </span>
+                    <div class="password-bars flex flex-row gap-3">
+                        <div class="w-[33%] bg-slate-100 h-1"></div>
+                        <div class="w-[33%] bg-slate-100 h-1"></div>
+                        <div class="w-[33%] bg-slate-100 h-1"></div>
+                    </div>
+                    <ul class="fa-ul text-xs my-2 password-checklist">
+                        <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Minimum of 8 characters
+                        </li>
+                        <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Must contain an
+                            uppercase letter
+                        </li>
+                        <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Contain a number or
+                            symbol
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <span class="password-error text-sm text-red-500 absolute -bottom-[25px]"></span>
-        </div>
-        <div class="col-span-1 sm:col-span-6 flex flex-col -mt-[25px]">
-            <div class="password-checklist-box border-1 border-red-500 p-2 rounded-md">
-                <span class="text-sm">
-                    Password requirements:
-                </span>
-                <ul class="fa-ul text-xs my-2 password-checklist">
-                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Minimum of 8 characters</li>
-                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Must contain an uppercase letter</li>
-                    <li><span class="fa-li"><i class="fa-solid fa-x text-red-500"></i></span>Contain a number or symbol</li>
-                </ul>
+            <div class="col-span-1 sm:col-span-6 flex flex-col relative">
+                <label for="confirm-password" class="block text-sm font-medium text-gray-500">Confirm
+                    Password*</label>
+                <div class="flex flex-row gap-2 justify-between px-3 py-1.5 rounded-md mt-2 w-full outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                    <input required type="password" id="confirm-password" name="confirm-password" minlength="8"
+                           class=" placeholder:text-gray-400 text-sm text-base text-gray-900 w-full focus:outline-0">
+                    <i class="password-reveal fa-regular fa-eye"></i>
+                </div>
+                <span class="confirm-password-error text-xs text-red-500 absolute -bottom-[25px]"></span>
             </div>
-        </div>
-        <div class="col-span-1 sm:col-span-6 flex items-center gap-8">
-            <!--            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>-->
-            <button type="submit"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Submit
-            </button>
-        </div>
-    </form>
-    <div class="mt-9 border-t border-gray-200 message whitespace-pre-line">
+            <div class="col-span-1 sm:col-span-6 flex items-center gap-8">
+                <!--            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>-->
+                <button disabled type="submit"
+                        class="submit w-full mt-4 rounded-md bg-indigo-300 px-3 py-2 text-sm font-semibold text-white shadow-xs">
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
 </main>
-<footer></footer>
+<footer>
+    <div class="message">
+
+    </div>
+</footer>
 </body>
 </html>
